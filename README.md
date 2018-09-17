@@ -69,6 +69,17 @@ struct DateTime{
 6: i32 second
 }
 
-For the time of the Logging Event I chose the above structure as it expresses the accuracy of the creation of the event and it is easily transferred from one system to another. Furthermore , I added two more fields in the Logging Event structure (deviceID and ip address) which express the uniqueness of the device the Logging Event comes from. 
+For the time of the Logging Event I chose the above structure as it expresses the accuracy of the creation of the event and it is easily transferred from one system to another. Furthermore , I added two more fields in the Logging Event structure (deviceID and ip address) which express the uniqueness of the device the Logging Event comes from. Also , I cite the structure of the log message : 
 
+
+struct LoggingMessage{
+1: string level,
+2: DateTime logTimestamp,
+3: string message
+}
+
+
+## Running the project
+
+Execute the buildRun.sh shell script file. The buildRun.sh cleans and packages the source code with maven , creating the executable jar (logging-event-service-1.0.0.jar) in the target folder. Then , execute the above jar file , starting the Logging Event procedure. Finally , the log file (loggingEvent.log) is created in the ${user.home}/logging.event.
 
